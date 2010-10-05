@@ -16,4 +16,4 @@ z=denoise(y);
 % title('去噪后信号频谱图')
 %% 香浓能量
 z=z+0.0001;
-shannon(z,Fs)
+shannon(z(1:22050),Fs)

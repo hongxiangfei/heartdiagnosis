@@ -1,14 +1,14 @@
-% clear
-% Fs=500;
-% n=0:1/Fs:0.4;
-% w1=200*pi;A1=5;
-% w2=400*pi;A2=12;
-% xn=A1*(cos(w1*n)+j*sin(w1*n))+A2*(j*sin(w2*n)+cos(w2*n))+randn(size(n));%xn=A1*exp(jw1n)+A2*exp(jw2n);
-% subplot(211);
-% plot(n,xn);
-% xlabel('n');
-% ylabel('xn');
-% title('xn=A1*exp(jw1n)+A2*exp(jw2n)+e(n)');
+clear
+Fs=500;
+n=0:1/Fs:0.4;
+w1=200*pi;A1=5;
+w2=400*pi;A2=12;
+xn=A1*(cos(w1*n)+j*sin(w1*n))+A2*(j*sin(w2*n)+cos(w2*n))+randn(size(n));%xn=A1*exp(jw1n)+A2*exp(jw2n);
+subplot(211);
+plot(n,xn);
+xlabel('n');
+ylabel('xn');
+title('xn=A1*exp(jw1n)+A2*exp(jw2n)+e(n)');
 
 
 

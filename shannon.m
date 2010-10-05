@@ -8,7 +8,7 @@ for i=1:N/2:len
     E(count)=0;
     for j=i:i+N-1
         if(j<=len)
-            E(count)=E(count)-x_norm(j)^2*log(x_norm(j)^2)/N;
+            E(count)=E(count)-abs(x_norm(j))^2*log(abs(x_norm(j))^2)/N;
         end
     end
     count=count+1;
