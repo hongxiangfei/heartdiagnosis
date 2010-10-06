@@ -1,4 +1,4 @@
-function shannon(s,Fs)
+function [P,t]=shannon(s,Fs)
 %对重构信号S求归一化平均香浓能量
 N=floor(Fs*0.02);
 count=1;

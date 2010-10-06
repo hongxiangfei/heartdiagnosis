@@ -2,7 +2,7 @@ clc;
 clear;
 %%
 % 读取音频信号
-[y,Fs,NBITS,OPTS]=wavread('01 normal heart sound.wav');
+[y,Fs,NBITS,OPTS]=wavread('09.wav');
 % 原采样率Fs=44100,降低20倍，采样率变为2205
 y=y(1:20:length(y),1);
 Fs=Fs/20;
@@ -16,4 +16,6 @@ z=denoise(y);
 % title('去噪后信号频谱图')
 %% 香浓能量
 z=z+0.0001;
-shannon(z(1:22050),Fs)
+[elp,t]=shannon(z(1:22050),Fs);
+PCG=newextract(elp,t);
+[hrate,s1h,s1H,s2h,s2H]=features(PCG,Fs);
