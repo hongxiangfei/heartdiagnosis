@@ -1,0 +1,12 @@
+fs = 1000;
+h = fir1(20, 0.3);
+r = randn(1024, 1);
+x = filter(h, 1, r);
+[P1, f] = pcov(x, 20, [], fs);
+[P2, f] = pmcov(x, 20, [], fs);
+Pxx1 = 10 * log10(P1);
+Pxx2 = 10 * log10(P2);
+plot(f, Pxx1, ':', f, Pxx2, '-.');
+ylabel('幅值（dB）');
+xlabel('功率谱估计');
+legend('协方差法','改进的协方差法');

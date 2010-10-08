@@ -1,0 +1,13 @@
+sigma=1;
+fs=1e7;
+t=1e-3;
+t1=0:1/fs:t-1/fs;
+n=length(t1);
+rand('state',0);
+u=rand(1,n);
+x=sqrt(2*log2(1./u))*sigma;
+%figure;
+subplot(2,1,1),plot(x),xlabel('t(单位：秒)'),
+%ylabel(‘y(单位：伏)’),
+title('瑞利分布信号');
+subplot(2,1,2),hist(x,0:0.02:10),title('均匀分布直方图');
