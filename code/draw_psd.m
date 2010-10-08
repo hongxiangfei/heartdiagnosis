@@ -1,13 +1,13 @@
-function draw_psd(signal,fs,mf)
+function [P,f]=draw_psd(signal,fs,mf)
 if nargin<3
     mf=fs/2;
 end
-nfft = 1024;
-[P,f] = pburg(signal,32,nfft,fs);
-Pxx = 10 * log10(P+0.0001);
+nfft = length(signal);
+[P,f] = pburg(signal,floor(fs/40),nfft,fs);
+Pxx = 10 * log10(P/max(P)+0.0001);
 figure
 len = floor(nfft/fs*mf);
-plot(f(1:len), Pxx(1:len));
+plot(f(1:len),Pxx(1:len))
 grid on;
-xlabel('ÆµÂÊ£¨Hz£©');
-ylabel('·ù¶È£¨dB£©');
+xlabel('Frequency(Hz)');
+ylabel('Amplitude(dB)');

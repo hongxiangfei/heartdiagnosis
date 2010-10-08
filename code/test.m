@@ -14,7 +14,7 @@ Fs=Fs/20;
 % subplot(2,1,2)
 % plot_spectrum(z,Fs,200)
 % title('去噪后信号频谱图')
-draw_psd(y,Fs,200);
+[P,f]=draw_psd(y,Fs,200);
 %% 香浓能量
 %z=z+0.0001;
 %[elp,t]=shannon(z(1:22050),Fs);
