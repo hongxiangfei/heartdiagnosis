@@ -8,12 +8,12 @@ nfft = fs/2 * 16;
 %Pxx0 = 10 * log10(P0/max(P0)+0.0001);
 PdB0 = ptodb(P0,max(P0));
 
-figure
 len = floor(nfft/fs*mf);
 P = P0(1:len);
 f = f0(1:len);
 PdB = PdB0(1:len);
-plot(f,P)
-hold on
-xlabel('Frequency(Hz)');
-ylabel('Power Spectral Density');
+% figure
+% plot(f,P)
+% hold on
+% xlabel('Frequency(Hz)');
+% ylabel('Power Spectral Density');

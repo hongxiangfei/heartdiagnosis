@@ -6,8 +6,8 @@ clear;
 % 原采样率Fs=44100,降低20倍，采样率变为2205
 y = y(1:20:length(y),1);
 Fs = Fs/20;
-%取2S的心音数据
-y = y(1:2*Fs);
+%取10S的心音数据
+y = y(1:6*Fs);
 %%每帧100ms，并且75%重复
 frame = 0.1 * Fs;
 factor = 0.75;
@@ -22,10 +22,11 @@ factor = 0.75;
 %% AR模型
 begin = 1;
 ending = frame;
+k = 1;
 while(ending <= length(y))
-
     [P,f] = draw_psd(y(begin:ending),Fs,200);
-    findfreq(P,f)
+    En(k) = findfreq(P,f);
+    k = k + 1;
     
     begin = begin + frame * (1 - factor);
     ending = ending + frame * (1 - factor);
