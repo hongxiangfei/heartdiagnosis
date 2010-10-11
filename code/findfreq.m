@@ -1,4 +1,4 @@
-function sum = findfreq(P,f)
+function En = findfreq(P,f)
 %% 
 len = length(P);
 Pmax = max(P);
@@ -32,7 +32,7 @@ while(i < len - fmax)
         i = i + 1;
     end
 end
-%% »­Í¼
+% »­Í¼
 % plot(f1,P1,'ro',f2,P2,'ro')
 % plot(f1,0:P1/100:P1,'r',f2,0:P2/100:P2,'r')
 % 
@@ -42,7 +42,7 @@ end
 % text(f2,0,s)
 % hold off
 %% 
-sum = P(Nmin:Nmax)'*(wf(Nmin:Nmax))';
-
+%En = P(Nmin:Nmax)'*(wf(Nmin:Nmax))';
+En = sum(P(Nmin:Nmax));
 
 

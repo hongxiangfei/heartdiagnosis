@@ -3,11 +3,13 @@ clear;
 %%
 % 读取音频信号
 [y,Fs,NBITS,OPTS] = wavread('09.wav');
+% y = textread('PD1F18.027B');
+% Fs = 6000;
 % 原采样率Fs=44100,降低20倍，采样率变为2205
 y = y(1:20:length(y),1);
 Fs = Fs/20;
-%取10S的心音数据
-y = y(1:6*Fs);
+%取5S的心音数据
+y = y(1:4*Fs);
 %%每帧100ms，并且75%重复
 frame = 0.1 * Fs;
 factor = 0.75;
